@@ -1,5 +1,309 @@
-template-repository (1.0-1) unstable; urgency=medium
+python-gmpy2 (2.1.2-2) unstable; urgency=medium
 
-  * Initial release
+  * Add lintian override for python-traceback-in-manpage
+  * Fix upstream Homepage
+  * Bump Standards-Version to 4.6.1, no changes needed.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Martin Kelly <martin@martingkelly.com>  Sun, 20 Nov 2022 14:50:14 -0800
+
+python-gmpy2 (2.1.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Drop python 3.10 patch, superseded upstream.
+  * Run the upstream test suite at build time.
+  * Run the upstream test suite under all supported Python 3 versions, in the
+    autopkgtest.
+  * Bump copyright years.
+  * Bump Standards-Version to 4.6.0, no changes needed.
+  * Bump watch file format to 4.
+
+ -- Stefano Rivera <stefanor@debian.org>  Tue, 01 Feb 2022 22:04:30 -0400
+
+python-gmpy2 (2.1.0~b5-1) unstable; urgency=medium
+
+  [ Stefano Rivera ]
+  * Team upload.
+  * Patch: Python 3.10 support: Use _Py_HashPointer. (Closes: #999376)
+
+  [ Ondřej Nový ]
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Sandro Tosi ]
+  * Use the new Debian Python Team contact name and address
+
+ -- Stefano Rivera <stefanor@debian.org>  Fri, 19 Nov 2021 17:17:30 -0400
+
+python-gmpy2 (2.1.0~b5-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream release version 2.1.0~b5; Closes: #965001
+
+ -- Brian Murray <brian@ubuntu.com>  Thu, 13 Aug 2020 15:38:24 -0700
+
+python-gmpy2 (2.1.0~b4-1) unstable; urgency=medium
+
+  * New upstream version 2.1.0~b4; Closes: #950205
+  * add sphinxdoc dependency
+  * bump standards-version (no changes needed)
+  * fix debhelper-but-no-misc-depends lintian issue
+  * re-fix doc-base-file-references-missing-file
+
+ -- Martin Kelly <martin@martingkelly.com>  Wed, 12 Feb 2020 19:23:36 -0800
+
+python-gmpy2 (2.1.0~b3-3) unstable; urgency=medium
+
+  * remove references to bin:python-gmpy2 in -common and -doc
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 18 Jan 2020 18:05:03 -0500
+
+python-gmpy2 (2.1.0~b3-2) unstable; urgency=medium
+
+  * Team upload.
+  * Drop python2 support; Closes: #937792
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 16 Jan 2020 00:35:15 -0500
+
+python-gmpy2 (2.1.0~b3-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+  * Bump Standards-Version to 4.4.1.
+
+  [ Martin Kelly ]
+  * New upstream release.
+  * fix multi-arch-same-package-calls-pycompile
+  * add Suggests for the -doc package
+  * fix doc-base-file-references-missing-file
+
+ -- Martin Kelly <martin@martingkelly.com>  Mon, 09 Sep 2019 12:12:34 -0700
+
+python-gmpy2 (2.1.0~a4-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Convert git repository from git-dpm to gbp layout
+
+  [ Martin Kelly ]
+  * Update to 2.1.0~a4 (Closes: #918802).
+  * Fix a variety of Lintian warnings.
+
+ -- Martin Kelly <martin@martingkelly.com>  Thu, 10 Jan 2019 18:33:02 -0800
+
+python-gmpy2 (2.0.8-3) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+  * d/watch: Use https protocol
+  * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
+
+  [ Martin Kelly ]
+  * d/control: Change sphinx build-depends to use Python 3
+  * d/control: Bump policy version to 4.1.5 (no changes needed)
+
+ -- Martin Kelly <martin@martingkelly.com>  Sun, 22 Jul 2018 19:22:29 -0700
+
+python-gmpy2 (2.0.8-2) unstable; urgency=medium
+
+  * Fixed all known copyrights and licenses (Closes: #857455).
+
+ -- Martin Kelly <martin@martingkelly.com>  Sat, 11 Mar 2017 14:07:21 -0800
+
+python-gmpy2 (2.0.8-1) unstable; urgency=medium
+
+  [ Martin Kelly ]
+  * Corrected a few stale entries in copyright file (also fixes a lintian
+    warning).
+  * Bumped policy version to 3.9.8.0
+  * Use Multi-Arch: same for binary packages
+  * Create -doc package
+  * Update packaging copyright dates
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https)
+
+ -- Martin Kelly <martin@martingkelly.com>  Tue, 07 Mar 2017 08:29:06 -0800
+
+python-gmpy2 (2.0.7-2) unstable; urgency=medium
+
+  * Overhauled debian/rules to use pybuild. Things look a lot better now!
+    Since dpkg-buildpackage -A and dpkg-buildpackage -B now work correctly,
+    this also Closes: #805958.
+  * Update URL in changelog to PyPi.
+
+ -- Martin Kelly <martin@martingkelly.com>  Wed, 02 Dec 2015 20:21:08 -0800
+
+python-gmpy2 (2.0.7-1) unstable; urgency=medium
+
+  * New upstream release
+  * Fixed duplicate long description lintian error
+
+ -- Martin Kelly <martin@martingkelly.com>  Sun, 23 Aug 2015 15:36:51 -0700
+
+python-gmpy2 (2.0.5-1) unstable; urgency=medium
+
+  * New upstream release
+  * Fixed watch file to use PyPi redirector
+  * Removed bogus test correction patches that are now present upstream
+  * Made the Sphinx manpage use the most recent changelog entry for build date
+    so we get reproducible builds
+
+ -- Martin Kelly <martin@martingkelly.com>  Tue, 23 Jun 2015 16:58:32 -0700
+
+python-gmpy2 (2.0.4-2) unstable; urgency=medium
+
+  * Adding in upstream patch for bogus test failures. We can drop the patch at
+    next release. Closes: #767417.
+  * Adding Multi-Arch: foreign so that just one copy of the -common package is
+    required for multi-arch setups.
+
+ -- Martin Kelly <martin@martingkelly.com>  Sat, 01 Nov 2014 12:26:30 -0700
+
+python-gmpy2 (2.0.4-1) unstable; urgency=medium
+
+  * New upstream release
+  * Updated Standards-Version to 3.9.6.0 (no changes needed)
+  * Using machine-readable copyright file
+  * Copyright is GPL 3 now, not GPL 2; fixed
+  * Fixed build error by adding -a flag to dh_* scripts
+  * Added dh-python to Build-Depends
+  * Dropping manpage patch (it's now fixed upstream)
+  * Unit tests now return error code, so the package build will fail if they
+    fail
+
+ -- Martin Kelly <martin@martingkelly.com>  Sun, 26 Oct 2014 14:26:49 -0700
+
+python-gmpy2 (2.0.3-1) unstable; urgency=medium
+
+  * New upstream release
+  * Updated Standards-Version to 3.9.5.0 (no changes needed)
+  * Changed Python 3 dev build dependency to python3-all-dev
+  * Added Python and Python 3 as build dependencies (needed to run setup.py)
+
+ -- Martin Kelly <martin@martingkelly.com>  Sun, 23 Feb 2014 14:30:07 -0800
+
+python-gmpy2 (2.0.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated Standards-Version to 3.9.4.0 (no changes needed)
+  * Changed rules to use default compiler hardening flags
+  * The manpage that comes with gmpy2 is now installed on the system
+  * Renamed package to python-gmpy2.
+  * Now providing a python3-gmpy2 package, which works with Python 3, as well
+    as a common package for files in common between the two packages
+  * No longer installing the tests
+  * Now running tests at build time
+  * Added patch to correct manpage library section from 1 to 3
+
+ -- Martin Kelly <martin@martingkelly.com>  Sun, 13 Oct 2013 16:18:02 -0700
+
+python-gmpy (1.15-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated Standards-Version to 3.9.3.0 (no changes needed)
+  * Updated the watch file to make it actually work (not sure if it really did
+    before)
+  * Updated debhelper compatibility level to 9
+  * Changed the license symlink to be more specific
+  * Cleaned up the rules file
+
+ -- Martin Kelly <aomighty@gmail.com>  Tue, 13 Mar 2012 23:31:03 -0400
+
+python-gmpy (1.14-3) unstable; urgency=low
+
+  * Removed version from libgmp3-dev dependency and changed it to libgmp-dev
+    (Closes: #619585)
+
+ -- Martin Kelly <aomighty@gmail.com>  Fri, 25 Mar 2011 14:24:29 -0700
+
+python-gmpy (1.14-2) unstable; urgency=low
+
+  * Changed build-depends from libgmp3-dev to libgmp10-dev as per SONAME change
+    (Closes: #618216)
+
+ -- Martin Kelly <aomighty@gmail.com>  Mon, 14 Mar 2011 21:16:48 -0400
+
+python-gmpy (1.14-1) unstable; urgency=low
+
+  * New upstream release
+  * Changed the watch file to remove the .ds in the orig.tar.gz filename
+
+ -- Martin Kelly <aomighty@gmail.com>  Mon, 20 Dec 2010 16:07:03 -0800
+
+python-gmpy (1.12-1) unstable; urgency=low
+
+  * New upstream release
+  * Bump Standards-Version to 3.9.1.0 (no changes needed)
+  * Moved from pycentral to dh_python2
+  * Changed python dependency to 2.6.5 so that dh_python2 will be installed
+  * Added a source/format file with 3.0 (native)
+  * Added the flag --install-layout=deb to the python install line since python
+    2.6 wants it
+
+ -- Martin Kelly <aomighty@gmail.com>  Wed, 14 Jul 2010 22:17:17 -0500
+
+python-gmpy (1.11-1) unstable; urgency=low
+
+  * New upstream release
+  * Bump Standards-Version to 3.8.4.0 (no changes needed)
+  * Removed "XS-DM-Upload-Allowed: yes" field because Ondrej Certik is no
+    longer an active uploader
+  * Added "${misc:Depends} to Depends to remove Lintian warning
+  * Updated dates in copyright file
+  * Changed copyright file to list copyright as "Copyright" instead of "(C)" to
+    fix lintian warning
+
+ -- Martin Kelly <aomighty@gmail.com>  Mon, 08 Feb 2010 16:31:32 -0500
+
+python-gmpy (1.10-1) unstable; urgency=low
+
+  * New upstream release
+  * Changed Uploaders entry to Debian Python Modules Team (Closes: #550456)
+  * Changed Homepage entry to the more recent http://code.google.com/p/gmpy/
+  * Bump Standards-Version to 3.8.3.0 (no changes needed)
+
+ -- Martin Kelly <aomighty@gmail.com>  Fri, 25 Dec 2009 14:31:15 -0800
+
+python-gmpy (1.04-1) unstable; urgency=low
+
+  * New upstream release
+  * Probably fixes a bug in python-mpmath (Closes: #530381)
+  * Bump Standards-Version to 3.8.1 (no changes needed)
+
+ -- Martin Kelly <aomighty@gmail.com>  Thu, 11 Jun 2009 08:43:15 -0700
+
+python-gmpy (1.03.ds-1) unstable; urgency=low
+
+  * New upstream release (Closes: #488941)
+  * Bump Standards-Version to 3.8.0 (no changes needed)
+  * XS-DM-Upload-Allowed: yes field added
+  * Ondrej Certik added to uploaders
+  * debian/watch file fixed
+  * debian/copyright updated with info how to get the orig.tar.gz
+  * license in debian/copyright updated to reflect the current codebase (set
+    to LGPL 2.1)
+  * install tests into /usr/share/doc/python-gmpy/examples/
+
+ -- Ondrej Certik <ondrej@certik.cz>  Fri, 04 Jul 2008 16:50:28 +0200
+
+python-gmpy (1.02~1.dfsg.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Bump Standards-Version to 3.7.3 (no changes needed)
+
+ -- Martin Kelly <aomighty@gmail.com>  Sat, 29 Dec 2007 21:27:19 -0800
+
+python-gmpy (1.01.dfsg.1-1) unstable; urgency=medium
+
+  * Modified the upstream sources to include a COPYING license file, since the
+    upstream author did not include one (Closes: #427005)
+
+ -- Martin Kelly <aomighty@gmail.com>  Sat, 02 Jun 2007 11:40:18 -0700
+
+python-gmpy (1.01-1) unstable; urgency=low
+
+  * Initial release (Closes: #299723)
+
+ -- Martin Kelly <aomighty@gmail.com>  Fri, 18 May 2007 21:46:23 -0700
