@@ -1,0 +1,5 @@
+# Upstream doesn't provide a GPG signature.
+python-gmpy2 source: debian-watch-does-not-check-gpg-signature
+
+# UMEGAYA metadata doesn't seem to make sense for this package.
+source: upstream-metadata-file-is-missing

@@ -1,0 +1,2 @@
+# Upstream actually has a traceback in their documentation (no crash).
+python-gmpy2-common: python-traceback-in-manpage
