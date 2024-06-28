@@ -7,8 +7,7 @@
  * Copyright 2000 - 2009 Alex Martelli                                     *
  *                                                                         *
  * Copyright 2008 - 2022 Case Van Horsen                                   *
- *                                                                         *
- * This file is part of GMPY2.                                             *
+ *                                                                         * 
  *                                                                         *
  * GMPY2 is free software: you can redistribute it and/or modify it under  *
  * the terms of the GNU Lesser General Public License as published by the  *
@@ -298,6 +297,44 @@ GMPy_MPZ_From_Integer(PyObject *obj, CTXT_Object *context)
     if (MPZ_Check(obj)) {
         Py_INCREF(obj);
         return (MPZ_Object*)obj;
+    }
+
+    if (PyIntOrLong_Check(obj))
+        return GMPy_MPZ_From_PyIntOrLong(obj, context);
+
+    if (XMPZ_Check(obj))
+        return GMPy_MPZ_From_XMPZ((XMPZ_Object*)obj, context);
+
+    if (HAS_STRICT_MPZ_CONVERSION(obj)) {
+        result = (MPZ_Object *) PyObject_CallMethod(obj, "__mpz__", NULL);
+
+        if (result != NULL && MPZ_Check(result)) {
+            return result;
+        }
+        else {
+            Py_XDECREF((PyObject*)result);
+            goto error;
+        }
+    }
+
+  error:
+    TYPE_ERROR("cannot convert object to mpz");
+    return NULL;
+}
+
+static MPZ_Object *
+GMPy_MPZ_From_IntegerAndCopy(PyObject *obj, CTXT_Object *context)
+{
+    MPZ_Object *result = NULL;
+
+    if (MPZ_Check(obj)) {
+        if (!(result = GMPy_MPZ_New(context))) {
+            /* LCOV_EXCL_START */
+            return NULL;
+            /* LCOV_EXCL_STOP */
+        }
+        mpz_set(result->z, MPZ(obj));
+        return result;
     }
 
     if (PyIntOrLong_Check(obj))
@@ -1167,6 +1204,31 @@ GMPy_MPQ_From_Rational(PyObject *obj, CTXT_Object *context)
     TYPE_ERROR("cannot convert object to mpq");
     return NULL;
 }
+
+static MPQ_Object*
+GMPy_MPQ_From_RationalAndCopy(PyObject *obj, CTXT_Object *context)
+{
+    MPQ_Object *result = NULL, *temp = NULL;
+
+    result = GMPy_MPQ_From_Rational(obj, context);
+
+    if (result == NULL)
+        return result;
+
+    if (Py_REFCNT(result) == 1)
+        return result;
+
+    if (!(temp = GMPy_MPQ_New(context))) {
+        /* LCOV_EXCL_START */
+        return NULL;
+        /* LCOV_EXCL_STOP */
+    }
+
+    mpq_set(temp->q, result->q);
+    Py_DECREF((PyObject*)result);
+    return temp;
+}
+
 
 static MPQ_Object*
 GMPy_MPQ_From_RationalWithType(PyObject *obj, int xtype, CTXT_Object *context)

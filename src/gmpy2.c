@@ -442,6 +442,23 @@
  *    Support Apple Silicon binary wheels.
  *    is_prime(-2) now returns False. Issue 312.
  *
+ *    2.1.3
+ *    Fix mpz(-3).is_prime().
+ *    Add powmod_sec().
+ *    Fix mpfr('inf') and mpfr('nan') if subnormalization is enabled.
+ *    powmod() and powmod_sec() release the GIL.
+ *    Fix error messages for iroot(x,n) for large n.
+ *    Add powmod_base_list() and powmod_exp_list() (experimental).
+ *    Fix gmpy2.mpq(mpq, int).
+ *    Fix issues with INF, NAN, and mpfr("-0") when subnormalization
+ *      is True
+ *
+ *    2.1.4
+ *    Version bump to fix wheel issues. No code changes.
+ *
+ *    2.1.5
+ *    Version bump to fix wheel issues. No code changes.
+ *
  ************************************************************************
  *
  * Discussion on sizes of C integer types.
@@ -506,7 +523,7 @@
 
 /* The following global strings are used by gmpy_misc.c. */
 
-char gmpy_version[] = "2.1.2";
+char gmpy_version[] = "2.1.5";
 
 char gmpy_license[] = "\
 The GMPY2 source code is licensed under LGPL 3 or later. The supported \
@@ -661,6 +678,7 @@ static PyMethodDef Pygmpy_methods [] =
     { "_printf", GMPy_printf, METH_VARARGS, GMPy_doc_function_printf },
     { "add", GMPy_Context_Add, METH_VARARGS, GMPy_doc_function_add },
     { "bit_clear", GMPy_MPZ_bit_clear_function, METH_VARARGS, doc_bit_clear_function },
+    { "bit_count", GMPy_MPZ_bit_count, METH_O, doc_bit_count },
     { "bit_flip", GMPy_MPZ_bit_flip_function, METH_VARARGS, doc_bit_flip_function },
     { "bit_length", GMPy_MPZ_bit_length_function, METH_O, doc_bit_length_function },
     { "bit_mask", GMPy_MPZ_bit_mask, METH_O, doc_bit_mask },
@@ -751,6 +769,9 @@ static PyMethodDef Pygmpy_methods [] =
     { "pack", GMPy_MPZ_pack, METH_VARARGS, doc_pack },
     { "popcount", GMPy_MPZ_popcount, METH_O, doc_popcount },
     { "powmod", GMPy_Integer_PowMod, METH_VARARGS, GMPy_doc_integer_powmod },
+    { "powmod_base_list", GMPy_Integer_PowMod_Base_List, METH_VARARGS, GMPy_doc_integer_powmod_base_list },
+    { "powmod_exp_list", GMPy_Integer_PowMod_Exp_List, METH_VARARGS, GMPy_doc_integer_powmod_exp_list },
+    { "powmod_sec", GMPy_Integer_PowMod_Sec, METH_VARARGS, GMPy_doc_integer_powmod_sec },
     { "primorial", GMPy_MPZ_Function_Primorial, METH_O, GMPy_doc_mpz_function_primorial },
     { "qdiv", GMPy_MPQ_Function_Qdiv, METH_VARARGS, GMPy_doc_function_qdiv },
     { "remove", GMPy_MPZ_Function_Remove, METH_VARARGS, GMPy_doc_mpz_function_remove },
@@ -914,7 +935,7 @@ static PyMethodDef Pygmpy_methods [] =
 };
 
 static char _gmpy_docs[] =
-"gmpy2 2.1.2 - General Multiple-precision arithmetic for Python\n"
+"gmpy2 2.1.5 - General Multiple-precision arithmetic for Python\n"
 "\n"
 "gmpy2 supports several multiple-precision libraries. Integer and\n"
 "rational arithmetic is provided by the GMP library. Real floating-\n"

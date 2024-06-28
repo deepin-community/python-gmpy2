@@ -1,0 +1,20 @@
+From: Martin Kelly <martin@martingkelly.com>
+Date: Sat, 19 Aug 2023 13:21:13 -0700
+Subject: add missing setup.cfg to SOURCES.txt
+
+---
+ gmpy2.egg-info/SOURCES.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/gmpy2.egg-info/SOURCES.txt b/gmpy2.egg-info/SOURCES.txt
+index ccfb35b..b62fc98 100644
+--- a/gmpy2.egg-info/SOURCES.txt
++++ b/gmpy2.egg-info/SOURCES.txt
+@@ -3,6 +3,7 @@ COPYING.LESSER
+ INSTALL
+ MANIFEST.in
+ README
++setup.cfg
+ setup.py
+ docs/Makefile
+ docs/advmpz.rst

@@ -40,6 +40,7 @@ static MPZ_Object *    GMPy_MPZ_From_PyStr(PyObject *s, int base, CTXT_Object *c
 static MPZ_Object *    GMPy_MPZ_From_PyFloat(PyObject *obj, CTXT_Object *context);
 
 static MPZ_Object *    GMPy_MPZ_From_Integer(PyObject *obj, CTXT_Object *context);
+static MPZ_Object *    GMPy_MPZ_From_IntegerAndCopy(PyObject *obj, CTXT_Object *context);
 static MPZ_Object *    GMPy_MPZ_From_IntegerWithType(PyObject *obj, int xtype, CTXT_Object *context);
 static MPZ_Object *    GMPy_MPZ_From_IntegerWithTypeAndCopy(PyObject *obj, int xtype, CTXT_Object *context);
 
@@ -89,6 +90,7 @@ static MPQ_Object *    GMPy_MPQ_From_MPZ(MPZ_Object *obj, CTXT_Object *context);
 static MPQ_Object *    GMPy_MPQ_From_XMPZ(XMPZ_Object *obj, CTXT_Object *context);
 
 static MPQ_Object *    GMPy_MPQ_From_Rational(PyObject* obj, CTXT_Object *context);
+static MPQ_Object *    GMPy_MPQ_From_RationalAndCopy(PyObject* obj, CTXT_Object *context);
 static MPQ_Object *    GMPy_MPQ_From_NumberWithType(PyObject* obj, int xtype, CTXT_Object *context);
 static MPQ_Object *    GMPy_MPQ_From_Number(PyObject* obj, CTXT_Object *context);
 static MPQ_Object *    GMPy_MPQ_From_RationalWithTypeAndCopy(PyObject* obj, int xtype, CTXT_Object *context);
