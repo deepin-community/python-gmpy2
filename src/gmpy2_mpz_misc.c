@@ -115,7 +115,7 @@ GMPy_MPZ_Function_Iroot(PyObject *self, PyObject *args)
         return NULL;
     }
 
-    n = GMPy_Integer_AsUnsignedLong(PyTuple_GET_ITEM(args, 1));
+    n = GMPy_Integer_AsUnsignedLong_v2(PyTuple_GET_ITEM(args, 1));
     if ((n == 0) || ((n == (unsigned long)(-1)) && PyErr_Occurred())) {
         VALUE_ERROR("n must be > 0");
         return NULL;
@@ -611,7 +611,7 @@ GMPy_MPZ_Function_DoubleFac(PyObject *self, PyObject *other)
 
 PyDoc_STRVAR(GMPy_doc_mpz_function_primorial,
 "primorial(n) -> mpz\n\n"
-"Return the product of all positive prime numbers less than or"
+"Return the product of all positive prime numbers less than or\n"
 "equal to n.");
 
 static PyObject *
@@ -1417,6 +1417,10 @@ GMPy_MPZ_Method_IsPrime(PyObject *self, PyObject *args)
         if (reps > 1000) {
             reps = 1000;
         }
+    }
+
+    if (mpz_sgn(MPZ(self)) == -1) {
+        Py_RETURN_FALSE;        
     }
 
     i = mpz_probab_prime_p(MPZ(self), (int)reps);
