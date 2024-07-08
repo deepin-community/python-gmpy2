@@ -1,0 +1,84 @@
+From: Martin Kelly <martin@martingkelly.com>
+Date: Sat, 19 Aug 2023 14:26:11 -0700
+Subject: typo fix in manpage
+
+---
+ docs/mpz.rst | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/docs/mpz.rst b/docs/mpz.rst
+index 4171b3a..7c21c60 100644
+--- a/docs/mpz.rst
++++ b/docs/mpz.rst
+@@ -103,7 +103,7 @@ mpz Methods
+     x.is_prime() returns True if *x* is _probably_ prime, else False if *x* is
+     definitely composite.
+ 
+-    See the documentation for *gmpy2.is_prime* for details on the underlaying
++    See the documentation for *gmpy2.is_prime* for details on the underlying
+     primality tests that are performed.
+ 
+ **is_square(...)**
+@@ -135,7 +135,7 @@ mpz Functions
+     bit_clear(x, n) returns a copy of *x* with bit *n* set to 0.
+ 
+ **bit_count(...)**
+-    bit_count(x) returns a the number of 1 bits in the binary 
++    bit_count(x) returns a the number of 1 bits in the binary
+     representation of *x*. Differs from popcount() for x <0.
+ 
+ **bit_flip(...)**
+@@ -285,11 +285,11 @@ mpz Functions
+ 
+ **is_bpsw_prp(...)**
+     is_bpsw_prp(n) returns True if *n* is a Baillie-Pomerance-Selfridge-Wagstaff
+-    probable prime. A BPSW probable prime passes both the is_strong_prp() test 
++    probable prime. A BPSW probable prime passes both the is_strong_prp() test
+     with base 2 and the is_selfridge_prp() test.
+ 
+ **is_congruent(...)**
+-    is_congurent(x, y, m) returns True if *x* is congruent to *y* modulo *m*, 
++    is_congurent(x, y, m) returns True if *x* is congruent to *y* modulo *m*,
+     else return False.
+ 
+ **is_divisible(...)**
+@@ -310,8 +310,8 @@ mpz Functions
+ 
+ **is_extra_strong_lucas_prp(...)**
+     is_extra_strong_lucas_prp(n, p) returns True if n is an extra strong Lucas probable
+-    prime with parameters (p, 1). 
+-    
++    prime with parameters (p, 1).
++
+     Assuming:
+         n is odd
+         D = p*p - 4
+@@ -347,7 +347,7 @@ mpz Functions
+         lucasv(p,q,n) == p (mod n).
+ 
+ **is_lucas_prp(...)**
+-    is_lucas_prp(n,p,q) returns True if *n* is a Lucas probable prime with 
++    is_lucas_prp(n,p,q) returns True if *n* is a Lucas probable prime with
+     parameters (p,q).
+ 
+     Assuming:
+@@ -518,15 +518,15 @@ mpz Functions
+ 
+ **powmod_exp_list(...)**
+     powmod_exp_list(base, exp_lst, mod) returns list(powmod(base, i, mod) for i in exp_lst).
+-    Releases the GIL so can be easily run in multiple threads. 
+-    
++    Releases the GIL so can be easily run in multiple threads.
++
+     Experimental in gmpy2 2.1.x. The capability will continue to exist in future
+     versions but the name may change.
+ 
+ **powmod_base_list(...)**
+     powmod_base_list(base_list, exp, mod) returns list(powmod(i, exp, mod) for i in lst).
+-    Releases the GIL so can be easily run in multiple threads. 
+-    
++    Releases the GIL so can be easily run in multiple threads.
++
+     Experimental in gmpy2 2.1.x. The capability will continue to exist in future
+     versions but the name may change.
+ 

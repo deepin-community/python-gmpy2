@@ -10,7 +10,7 @@ Build-Depends:
     python3-all-dev,
     python3-setuptools,
     python3-sphinx
-Standards-Version: 4.6.1
+Standards-Version: 4.6.2
 Rules-Requires-Root: no
 Homepage: https://github.com/aleaxit/gmpy
 Uploaders: Debian Python Team <team+python@tracker.debian.org>

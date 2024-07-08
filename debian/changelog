@@ -1,3 +1,27 @@
+python-gmpy2 (2.1.5-3) unstable; urgency=medium
+
+  * Fix build with Python 3.12; Closes: #1055558
+
+ -- Martin Kelly <martin@martingkelly.com>  Sun, 12 Nov 2023 10:32:44 -0800
+
+python-gmpy2 (2.1.5-2) unstable; urgency=medium
+
+  * Remove egg-info instead of patching
+  * Backport patches to fix test failures on mpfr 4.2.1; Closes: #1050797
+
+ -- Martin Kelly <martin@martingkelly.com>  Sat, 09 Sep 2023 12:35:12 -0700
+
+python-gmpy2 (2.1.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Cleanup the upstream sources
+  * Clean auto-generated build files before build
+  * Closes: #1046766
+  * Bump standards to 4.6.2 (no changes needed)
+  * Typo fix in manpage
+
+ -- Martin Kelly <martin@martingkelly.com>  Sat, 19 Aug 2023 14:27:47 -0700
+
 python-gmpy2 (2.1.2-2) unstable; urgency=medium
 
   * Add lintian override for python-traceback-in-manpage

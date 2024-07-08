@@ -1,0 +1,6 @@
+0001-remove-.pyc-from-SOURCES.txt.patch
+0002-add-missing-setup.cfg-to-SOURCES.txt.patch
+0003-typo-fix-in-manpage.patch
+0004-Cleanup-gmpy2-object-caching.patch
+0005-Exclude-MPFR-workaround-for-MPFR-4.2.1.patch
+0006-Fix-build-with-Python-3.12.patch

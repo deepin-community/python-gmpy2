@@ -1,0 +1,36 @@
+From: Martin Kelly <martin@martingkelly.com>
+Date: Sat, 19 Aug 2023 13:31:01 -0700
+Subject: remove .pyc from SOURCES.txt
+
+These shouldn't be in the sources.
+---
+ gmpy2.egg-info/SOURCES.txt | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/gmpy2.egg-info/SOURCES.txt b/gmpy2.egg-info/SOURCES.txt
+index 5ea14a4..ccfb35b 100644
+--- a/gmpy2.egg-info/SOURCES.txt
++++ b/gmpy2.egg-info/SOURCES.txt
+@@ -140,7 +140,6 @@ src/mpz_pylong.c
+ test/gmpy_test.py
+ test/runtests.py
+ test/supportclasses.py
+-test/supportclasses.pyc
+ test/test_abs.txt
+ test/test_context.txt
+ test/test_gmpy2_abs.txt
+@@ -202,7 +201,6 @@ test/test_mpq.txt
+ test/test_mpq_to_from_binary.txt
+ test/test_mpz.txt
+ test/test_mpz_args.py
+-test/test_mpz_args.pyc
+ test/test_mpz_bit.txt
+ test/test_mpz_create.txt
+ test/test_mpz_functions.txt
+@@ -212,5 +210,4 @@ test/test_mpz_random.txt
+ test/test_mpz_template.txt
+ test/test_mpz_to_from_binary.txt
+ test/test_pack.py
+-test/test_pack.pyc
+ test/test_py32_hash.txt
+\ No newline at end of file
