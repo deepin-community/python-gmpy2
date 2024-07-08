@@ -1,3 +1,9 @@
+python-gmpy2 (2.1.2-2deepin1) unstable; urgency=medium
+
+  * No source change upload against python 3.12.
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Mon, 08 Jul 2024 09:55:02 +0200
+
 python-gmpy2 (2.1.2-2) unstable; urgency=medium
 
   * Add lintian override for python-traceback-in-manpage
